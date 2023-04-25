@@ -6,6 +6,7 @@ import {
   PanResponder,
   StyleSheet,
   View,
+  GestureResponderHandlers,
 } from "react-native";
 
 interface UsePanSwaggalerOptions {
@@ -21,14 +22,20 @@ const usePanSwaggler = (
   { onPanResponderMove, onPanResponderRelease }: UsePanSwaggalerOptions,
   dependencyArray: unknown[]
 ) => {
-  return useMemo(() => {
-    return PanResponder.create({
+  const [panHandlers, setPanHandlers] = useState<GestureResponderHandlers>();
+
+  useEffect(() => {
+    const responder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
       onPanResponderMove,
       onPanResponderRelease,
     });
+
+    setPanHandlers(responder.panHandlers);
   }, dependencyArray);
+
+  return { panHandlers };
 };
 
 const DisplayText = () => {
