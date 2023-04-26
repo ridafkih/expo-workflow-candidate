@@ -18,6 +18,12 @@ interface UsePanSwaggalerOptions {
   >[0]["onPanResponderRelease"];
 }
 
+/**
+ * A hook that creates a new PanResponder instance every time the `dependencyArray` changes, and returns the `panHandlers` object to be used on a View component.
+ * @param options - An object containing the `onPanResponderMove` and `onPanResponderRelease` callback functions.
+ * @param dependencyArray - An array of dependencies that will trigger the effect when changed, and re-instantiate the PanResponder.
+ * @returns An object containing the `panHandlers` object to be used on a View component.
+ */
 const usePanSwaggler = (
   { onPanResponderMove, onPanResponderRelease }: UsePanSwaggalerOptions,
   dependencyArray: unknown[]
