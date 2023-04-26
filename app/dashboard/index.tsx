@@ -70,16 +70,19 @@ const DisplayText = () => {
 
   return (
     <View {...panHandlers} style={[styles.view]}>
-      <Button title="+1" onPress={() => adjustMultiplier(1)} />
-      <Button title="-1" onPress={() => adjustMultiplier(-1)} />
+      <Button title="+1" onPress={() => adjustMultiplier(1)} color="#e7e5e4" />
+      <Button title="-1" onPress={() => adjustMultiplier(-1)} color="#e7e5e4" />
       <Animated.View
-        style={{
-          transform: [{ translateX: movement.x }, { translateY: movement.y }],
-        }}
+        style={[
+          {
+            transform: [{ translateX: movement.x }, { translateY: movement.y }],
+          },
+          styles.details,
+        ]}
       >
-        <Text style={{ color: "white" }}>x({movement.x.toFixed(2)})</Text>
-        <Text style={{ color: "white" }}>y({movement.y.toFixed(2)})</Text>
-        <Text style={{ color: "white" }}>multiplier({multiplier})</Text>
+        <Text style={{ color: "#e7e5e4" }}>x({movement.x.toFixed(2)})</Text>
+        <Text style={{ color: "#e7e5e4" }}>y({movement.y.toFixed(2)})</Text>
+        <Text style={{ color: "#e7e5e4" }}>multiplier({multiplier})</Text>
       </Animated.View>
     </View>
   );
@@ -88,9 +91,16 @@ const DisplayText = () => {
 const styles = StyleSheet.create({
   view: {
     flex: 1,
-    backgroundColor: "black",
+    backgroundColor: "#1c1917",
     justifyContent: "center",
     alignItems: "center",
+  },
+  details: {
+    padding: 16,
+    backgroundColor: "#292524",
+    borderRadius: 4,
+    borderColor: "#44403c",
+    borderWidth: 1,
   },
 });
 
