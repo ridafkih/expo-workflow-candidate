@@ -18,6 +18,12 @@ interface UsePanSwaggalerOptions {
   >[0]["onPanResponderRelease"];
 }
 
+/**
+ * A hook that creates a new PanResponder instance every time the `dependencyArray` changes, and returns the `panHandlers` object to be used on a View component.
+ * @param options - An object containing the `onPanResponderMove` and `onPanResponderRelease` callback functions.
+ * @param dependencyArray - An array of dependencies that will trigger the effect when changed, and re-instantiate the PanResponder.
+ * @returns An object containing the `panHandlers` object to be used on a View component.
+ */
 const usePanSwaggler = (
   { onPanResponderMove, onPanResponderRelease }: UsePanSwaggalerOptions,
   dependencyArray: unknown[]
@@ -70,16 +76,19 @@ const DisplayText = () => {
 
   return (
     <View {...panHandlers} style={[styles.view]}>
-      <Button title="+0.5" onPress={() => adjustMultiplier(0.5)} />
-      <Button title="-0.5" onPress={() => adjustMultiplier(-0.5)} />
+      <Button title="+0.5" onPress={() => adjustMultiplier(0.5)} color="#e7e5e4" />
+      <Button title="-0.5" onPress={() => adjustMultiplier(-0.5)} color="#e7e5e4" />
       <Animated.View
-        style={{
-          transform: [{ translateX: movement.x }, { translateY: movement.y }],
-        }}
+        style={[
+          {
+            transform: [{ translateX: movement.x }, { translateY: movement.y }],
+          },
+          styles.details,
+        ]}
       >
-        <Text style={{ color: "white" }}>x({movement.x.toFixed(2)})</Text>
-        <Text style={{ color: "white" }}>y({movement.y.toFixed(2)})</Text>
-        <Text style={{ color: "white" }}>multiplier({multiplier})</Text>
+        <Text style={{ color: "#e7e5e4" }}>x({movement.x.toFixed(2)})</Text>
+        <Text style={{ color: "#e7e5e4" }}>y({movement.y.toFixed(2)})</Text>
+        <Text style={{ color: "#e7e5e4" }}>multiplier({multiplier})</Text>
       </Animated.View>
     </View>
   );
@@ -88,9 +97,16 @@ const DisplayText = () => {
 const styles = StyleSheet.create({
   view: {
     flex: 1,
-    backgroundColor: "black",
+    backgroundColor: "#1c1917",
     justifyContent: "center",
     alignItems: "center",
+  },
+  details: {
+    padding: 16,
+    backgroundColor: "#292524",
+    borderRadius: 4,
+    borderColor: "#44403c",
+    borderWidth: 1,
   },
 });
 

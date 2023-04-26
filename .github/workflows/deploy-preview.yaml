@@ -17,6 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
+          ref: main
           token: ${{ secrets.PAT }}
 
       - uses: actions/setup-node@v3
@@ -32,7 +33,7 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
-      - uses: ridafkih/expo-workflow/actions/preview@v0.10.5
+      - uses: ridafkih/expo-workflow/actions/preview@v0.10.7
         with:
           github-token: ${{ secrets.PAT }}
           branch-name: ${{ github.head_ref || github.ref_name }}
