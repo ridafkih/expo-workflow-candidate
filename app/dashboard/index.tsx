@@ -77,12 +77,12 @@ const DisplayText = () => {
   return (
     <View {...panHandlers} style={[styles.view]}>
       <Button
-        title="+0.5"
+        title="Increase"
         onPress={() => adjustMultiplier(0.5)}
         color="white"
       />
       <Button
-        title="-0.5"
+        title="Decrease"
         onPress={() => adjustMultiplier(-0.5)}
         color="white"
       />
