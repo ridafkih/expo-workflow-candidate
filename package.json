@@ -1,6 +1,6 @@
 {
   "name": "maxrewards",
-  "version": "1.3.13",
+  "version": "1.3.14",
   "description": "The MaxRewards application is the application where your credit cards live.",
   "main": "index.js",
   "repository": "https://github.com/maxrewards/maxrewards",
