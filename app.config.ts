@@ -3,8 +3,6 @@ import { hashDependencies } from "dephash";
 import { readFileSync } from "fs";
 import { join } from "path";
 
-// void 0;
-
 const { APP_VARIANT = "development", EAS_BUILD } = process.env;
 
 const packageJsonContents = readFileSync(
