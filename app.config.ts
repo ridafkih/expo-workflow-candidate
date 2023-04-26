@@ -68,3 +68,5 @@ const EXPO_CONFIG: ExpoConfig = {
 };
 
 export default EXPO_CONFIG;
+
+// Simulate native change
