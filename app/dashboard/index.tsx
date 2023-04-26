@@ -70,8 +70,8 @@ const DisplayText = () => {
 
   return (
     <View {...panHandlers} style={[styles.view]}>
-      <Button title="+1" onPress={() => adjustMultiplier(1)} />
-      <Button title="-1" onPress={() => adjustMultiplier(-1)} />
+      <Button title="+0.5" onPress={() => adjustMultiplier(0.5)} />
+      <Button title="-0.5" onPress={() => adjustMultiplier(-0.5)} />
       <Animated.View
         style={{
           transform: [{ translateX: movement.x }, { translateY: movement.y }],
