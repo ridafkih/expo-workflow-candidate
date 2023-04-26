@@ -100,9 +100,9 @@ const DisplayText = () => {
           styles.details,
         ]}
       >
-        <Text style={{ color: "#e2e8f0" }}>x({movement.x.toFixed(2)})</Text>
-        <Text style={{ color: "#e2e8f0" }}>y({movement.y.toFixed(2)})</Text>
-        <Text style={{ color: "#e2e8f0" }}>m({multiplier})</Text>
+        <Text style={{ color: "#e2e8f0" }}>x: {movement.x.toFixed(2)}</Text>
+        <Text style={{ color: "#e2e8f0" }}>y: {movement.y.toFixed(2)}</Text>
+        <Text style={{ color: "#e2e8f0" }}>m: {multiplier}</Text>
       </Animated.View>
     </View>
   );
