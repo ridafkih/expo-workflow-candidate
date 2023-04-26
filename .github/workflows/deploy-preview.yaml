@@ -1,0 +1,43 @@
+name: Preview Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: version-bump
+
+jobs:
+  generate-preview:
+    name: Generate Preview
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+          token: ${{ secrets.PAT }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+
+      - name: install
+        run: yarn
+
+      - uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - uses: ridafkih/expo-workflow/actions/preview@v0.10.12
+        with:
+          github-token: ${{ secrets.PAT }}
+          branch-name: ${{ github.head_ref || github.ref_name }}
+          head: ${{ github.event.pull_request.head.sha }}

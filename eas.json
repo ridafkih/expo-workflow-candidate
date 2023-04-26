@@ -1,0 +1,67 @@
+{
+  "cli": {
+    "promptToConfigurePushNotifications": false
+  },
+  "submit": {
+    "production": {}
+  },
+  "build": {
+    "artifact": {
+      "channel": "development",
+      "extends": "development",
+      "env": {
+        "APP_VARIANT": "artifact"
+      }
+    },
+    "development": {
+      "channel": "main",
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": {
+        "resourceClass": "m-medium"
+      },
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "APP_VARIANT": "development"
+      }
+    },
+    "simulator": {
+      "extends": "development",
+      "ios": {
+        "simulator": true,
+        "resourceClass": "m-medium"
+      },
+      "env": {
+        "APP_VARIANT": "simulator"
+      }
+    },
+    "preview": {
+      "channel": "main",
+      "distribution": "internal",
+      "ios": {
+        "resourceClass": "m-medium"
+      },
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "APP_VARIANT": "preview"
+      }
+    },
+    "production": {
+      "channel": "production",
+      "distribution": "store",
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "ios": {
+        "resourceClass": "m-medium"
+      },
+      "env": {
+        "APP_VARIANT": "production"
+      }
+    }
+  }
+}
