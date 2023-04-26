@@ -13,6 +13,9 @@ interface UsePanSwaggalerOptions {
   onPanResponderMove: Parameters<
     PanResponder["create"]
   >[0]["onPanResponderMove"];
+  /**
+   * Add another comment
+   */
   onPanResponderRelease: Parameters<
     PanResponder["create"]
   >[0]["onPanResponderRelease"];
