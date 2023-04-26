@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   details: {
-    padding: 16,
+    padding: 18,
     backgroundColor: "#292524",
     borderRadius: 4,
     borderColor: "#44403c",
