@@ -10,6 +10,9 @@ import {
 } from "react-native";
 
 interface UsePanSwaggalerOptions {
+  /**
+   * Add comment
+   */
   onPanResponderMove: Parameters<
     PanResponder["create"]
   >[0]["onPanResponderMove"];
