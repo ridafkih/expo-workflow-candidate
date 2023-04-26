@@ -83,12 +83,12 @@ const DisplayText = () => {
   return (
     <View {...panHandlers} style={[styles.view]}>
       <Button
-        title="Up"
+        title="+0.5"
         onPress={() => adjustMultiplier(0.5)}
         color="#e2e8f0"
       />
       <Button
-        title="Down"
+        title="-0.5"
         onPress={() => adjustMultiplier(-0.5)}
         color="#e2e8f0"
       />
