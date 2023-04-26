@@ -76,8 +76,8 @@ const DisplayText = () => {
 
   return (
     <View {...panHandlers} style={[styles.view]}>
-      <Button title="+1" onPress={() => adjustMultiplier(1)} color="#e7e5e4" />
-      <Button title="-1" onPress={() => adjustMultiplier(-1)} color="#e7e5e4" />
+      <Button title="+0.5" onPress={() => adjustMultiplier(0.5)} color="#e7e5e4" />
+      <Button title="-0.5" onPress={() => adjustMultiplier(-0.5)} color="#e7e5e4" />
       <Animated.View
         style={[
           {
