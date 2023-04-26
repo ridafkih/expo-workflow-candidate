@@ -1,8 +1,7 @@
 name: Preview Deployment
 
 on:
-  pull_request:
-    types: [closed]
+  push:
     branches:
       - main
 
@@ -33,7 +32,7 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
-      - uses: ridafkih/expo-workflow/actions/preview@v0.10.8
+      - uses: ridafkih/expo-workflow/actions/preview@v0.10.9
         with:
           github-token: ${{ secrets.PAT }}
           branch-name: ${{ github.head_ref || github.ref_name }}
