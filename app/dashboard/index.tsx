@@ -85,12 +85,12 @@ const DisplayText = () => {
       <Button
         title="Increase"
         onPress={() => adjustMultiplier(0.5)}
-        color="#e7e5e4"
+        color="#e2e8f0"
       />
       <Button
         title="Decrease"
         onPress={() => adjustMultiplier(-0.5)}
-        color="#e7e5e4"
+        color="#e2e8f0"
       />
       <Animated.View
         style={[
@@ -100,9 +100,9 @@ const DisplayText = () => {
           styles.details,
         ]}
       >
-        <Text style={{ color: "#e7e5e4" }}>x({movement.x.toFixed(2)})</Text>
-        <Text style={{ color: "#e7e5e4" }}>y({movement.y.toFixed(2)})</Text>
-        <Text style={{ color: "#e7e5e4" }}>m({multiplier})</Text>
+        <Text style={{ color: "#e2e8f0" }}>x({movement.x.toFixed(2)})</Text>
+        <Text style={{ color: "#e2e8f0" }}>y({movement.y.toFixed(2)})</Text>
+        <Text style={{ color: "#e2e8f0" }}>m({multiplier})</Text>
       </Animated.View>
     </View>
   );
@@ -111,15 +111,15 @@ const DisplayText = () => {
 const styles = StyleSheet.create({
   view: {
     flex: 1,
-    backgroundColor: "#1c1917",
+    backgroundColor: "#0f172a",
     justifyContent: "center",
     alignItems: "center",
   },
   details: {
     padding: 18,
-    backgroundColor: "#292524",
+    backgroundColor: "#0f172a",
     borderRadius: 6,
-    borderColor: "#44403c",
+    borderColor: "#1e293b",
     borderWidth: 1,
   },
 });
