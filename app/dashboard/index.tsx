@@ -79,12 +79,12 @@ const DisplayText = () => {
       <Button
         title="+0.5"
         onPress={() => adjustMultiplier(0.5)}
-        color="#e7e5e4"
+        color="white"
       />
       <Button
         title="-0.5"
         onPress={() => adjustMultiplier(-0.5)}
-        color="#e7e5e4"
+        color="white"
       />
       <Animated.View
         style={[
