@@ -1,0 +1,6 @@
+.DS_STORE
+
+# Dependencies
+node_modules/
+.expo/
+.hash
