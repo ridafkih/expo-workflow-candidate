@@ -37,7 +37,7 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
-      - uses: ridafkih/expo-workflow/actions/build@v0.11.0
+      - uses: ridafkih/expo-workflow/actions/build@v0.12.0
         with:
           github-token: ${{ github.token }}
           branch-name: ${{ github.head_ref || github.ref_name }}
@@ -68,7 +68,7 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
-      - uses: ridafkih/expo-workflow/actions/update@v0.11.0
+      - uses: ridafkih/expo-workflow/actions/update@v0.12.0
         with:
           github-token: ${{ github.token }}
           branch-name: ${{ github.head_ref || github.ref_name }}
